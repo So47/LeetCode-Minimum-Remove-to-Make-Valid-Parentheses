@@ -1,9 +1,9 @@
 class Solution:
     def minRemoveToMakeValid(self, s: str) -> str:
-        stack = []
-        output = list(s)
+       stack = []
+       output = list(s)
 
-        for i, char in enumerate(s):
+       for i,char in enumerate(s):
             if char == '(':
                 stack.append(i)
             elif char == ')':
@@ -12,7 +12,8 @@ class Solution:
                 else:
                     output[i] = ''
 
-        for index in stack:
-            output[index] = ''
-        return ''.join(output)        
-        
+       # Remove unmatched open parentheses
+       for index in stack:
+           output[index] = ''
+
+       return ''.join(output)
